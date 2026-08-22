@@ -1,6 +1,5 @@
-// <copyright file="IOption.cs" company="Microsoft">
-// Copyright (c) Microsoft. All rights reserved.
-// </copyright>
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
 
 namespace Substrait.Core.Extension.Functions;
 

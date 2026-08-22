@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
+
 using System.Reflection;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

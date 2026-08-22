@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
+
 using Google.Protobuf;
 using Google.Protobuf.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -1,6 +1,5 @@
-// <copyright file="PrimitiveTypeFactory.cs" company="Microsoft">
-// Copyright (c) Microsoft. All rights reserved.
-// </copyright>
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
 
 using Substrait.Core.Extension.Types;
 using Substrait.Tools;

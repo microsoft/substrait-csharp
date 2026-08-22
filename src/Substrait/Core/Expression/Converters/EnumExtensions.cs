@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
+
 using Substrait.Tools;
 using static Substrait.Core.Expression.AggregateFunctionInvocation;
 using static Substrait.Core.Expression.Expression.Cast;

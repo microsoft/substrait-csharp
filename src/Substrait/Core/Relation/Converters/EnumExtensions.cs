@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
+
 using Substrait.Tools;
 using static Substrait.Core.Relation.AbstractJoin;
 using static Substrait.Core.Relation.Set;

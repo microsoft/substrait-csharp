@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
+
 using Substrait.Core.Extension;
 using Substrait.Core.Plan.Converters;
 using ProtoType = Substrait.Protobuf.Type;

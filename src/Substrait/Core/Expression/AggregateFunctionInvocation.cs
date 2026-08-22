@@ -1,6 +1,5 @@
-// <copyright file="AggregateFunctionInvocation.cs" company="Microsoft">
-// Copyright (c) Microsoft. All rights reserved.
-// </copyright>
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
 
 using System.Collections.Immutable;
 using Substrait.Core.Extension.Functions;

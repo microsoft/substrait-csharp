@@ -1,6 +1,5 @@
-// <copyright file="DefaultTypeVisitor.cs" company="Microsoft">
-// Copyright (c) Microsoft. All rights reserved.
-// </copyright>
+// Copyright (c) Microsoft Corporation
+// SPDX-License-Identifier: Apache-2.0
 
 using static Substrait.Core.Type.ParameterizedType;
 using static Substrait.Core.Type.PrimitiveType;
