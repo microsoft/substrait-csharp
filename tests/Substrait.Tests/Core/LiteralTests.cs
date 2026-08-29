@@ -176,12 +176,12 @@ public class LiteralTests
     [TestMethod]
     public void TestDecimalLiteralEquals()
     {
-        var v1 = new DecimalLiteral(ByteString.FromBase64("abcd"), 3, 10, NullableType.Required);
-        var v2 = new DecimalLiteral(ByteString.FromBase64("abcd"), 3, 10, NullableType.Required);
-        var v3 = new DecimalLiteral(ByteString.FromBase64("dbca"), 3, 10, NullableType.Required);
-        var v4 = new DecimalLiteral(ByteString.FromBase64("abcd"), 3, 10, NullableType.Nullable);
-        var v5 = new DecimalLiteral(ByteString.FromBase64("abcd"), 4, 10, NullableType.Required);
-        var v6 = new DecimalLiteral(ByteString.FromBase64("abcd"), 3, 11, NullableType.Required);
+        var v1 = new DecimalLiteral(ByteString.FromBase64("abcd"), 10, 3, NullableType.Required);
+        var v2 = new DecimalLiteral(ByteString.FromBase64("abcd"), 10, 3, NullableType.Required);
+        var v3 = new DecimalLiteral(ByteString.FromBase64("dbca"), 10, 3, NullableType.Required);
+        var v4 = new DecimalLiteral(ByteString.FromBase64("abcd"), 10, 3, NullableType.Nullable);
+        var v5 = new DecimalLiteral(ByteString.FromBase64("abcd"), 12, 3, NullableType.Required);
+        var v6 = new DecimalLiteral(ByteString.FromBase64("abcd"), 10, 4, NullableType.Required);
 
         Assert.AreEqual(v1, v2);
         Assert.AreNotEqual(v1, v3);

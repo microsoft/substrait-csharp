@@ -539,6 +539,8 @@ static readonly Substrait.Core.Type.TypeFactory.REQUIRED -> Substrait.Core.Type.
 static readonly Substrait.Tools.StringBuilderUtils.IndentChar.Default -> Substrait.Tools.StringBuilderUtils.IndentChar
 static readonly Substrait.Tools.Visitor.NoOpContext<TNode, TOutput>.DEFAULT -> Substrait.Tools.Visitor.NoOpContext<TNode, TOutput>!
 static readonly Substrait.Tools.Visitor.VoidOutput.Instance -> Substrait.Tools.Visitor.VoidOutput!
+const Substrait.Core.Type.ParameterizedType.Decimal.MaxPrecision = 38 -> int
+const Substrait.Core.Type.ParameterizedType.MaxSubsecondPrecision = 12 -> int
 static Substrait.Core.Extension.Functions.FunctionImpl.ConstructKey(string! name, System.Collections.Generic.IReadOnlyList<Substrait.Core.Extension.Functions.IArgument!>! arguments) -> string!
 static Substrait.Core.Extension.Functions.TypeExpressionFactory.Of(Substrait.Core.Type.IType.NullableType nullable) -> Substrait.Core.Extension.Functions.TypeExpressionFactory!
 static Substrait.Core.Extension.Functions.TypeExpressionParser.Parse(string! typeExpressionStr) -> Substrait.Core.Extension.Functions.ITypeExpression!

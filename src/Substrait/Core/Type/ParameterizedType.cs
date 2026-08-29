@@ -16,6 +16,11 @@ namespace Substrait.Core.Type;
 public abstract class ParameterizedType : IType
 {
     /// <summary>
+    /// The maximum sub-second precision (picoseconds) a temporal type may declare.
+    /// </summary>
+    public const int MaxSubsecondPrecision = 12;
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="ParameterizedType"/> class.
     /// </summary>
     /// <param name="nullable">Whether it is nullable.</param>
@@ -108,6 +113,11 @@ public abstract class ParameterizedType : IType
         public PrecisionTimestamp(int precision, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (precision < 0 || precision > MaxSubsecondPrecision)
+            {
+                throw new ArgumentOutOfRangeException(nameof(precision), precision, $"0-{MaxSubsecondPrecision} (seconds to picoseconds)");
+            }
+
             this.Precision = precision;
         }
 
@@ -172,6 +182,11 @@ public abstract class ParameterizedType : IType
         public PrecisionTimestampTZ(int precision, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (precision < 0 || precision > MaxSubsecondPrecision)
+            {
+                throw new ArgumentOutOfRangeException(nameof(precision), precision, $"0-{MaxSubsecondPrecision} (seconds to picoseconds)");
+            }
+
             this.Precision = precision;
         }
 
@@ -236,6 +251,11 @@ public abstract class ParameterizedType : IType
         public FixedChar(int length, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (length <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), length, "> 0");
+            }
+
             this.Length = length;
         }
 
@@ -300,6 +320,11 @@ public abstract class ParameterizedType : IType
         public VarChar(int length, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (length <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), length, "> 0");
+            }
+
             this.Length = length;
         }
 
@@ -364,6 +389,11 @@ public abstract class ParameterizedType : IType
         public FixedBinary(int length, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (length <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(length), length, "> 0");
+            }
+
             this.Length = length;
         }
 
@@ -420,6 +450,11 @@ public abstract class ParameterizedType : IType
     public sealed class Decimal : ParameterizedType, IEquatable<Decimal>
     {
         /// <summary>
+        /// The maximum precision (total digits) a <see cref="Decimal"/> may declare.
+        /// </summary>
+        public const int MaxPrecision = 38;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Decimal"/> class.
         /// </summary>
         /// <param name="precision">The precision.</param>
@@ -429,6 +464,16 @@ public abstract class ParameterizedType : IType
         public Decimal(int precision, int scale, NullableType nullable, ITypeVariation? typeVariation)
             : base(nullable, typeVariation)
         {
+            if (precision < 1 || precision > MaxPrecision)
+            {
+                throw new ArgumentOutOfRangeException(nameof(precision), precision, $"1-{MaxPrecision}");
+            }
+
+            if (scale < 0 || scale > precision)
+            {
+                throw new ArgumentOutOfRangeException(nameof(scale), scale, $"0-{precision} (the decimal's precision)");
+            }
+
             this.Precision = precision;
             this.Scale = scale;
         }

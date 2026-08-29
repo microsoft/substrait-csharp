@@ -139,8 +139,8 @@ public sealed class TypeUtilsTests
             }
         }
 
-        var structFirstVariation = new TypeVariationImpl("/test", required.VarChar(0).TypeName, "var1", string.Empty, FunctionBehavior.INHERITS);
-        var structSecondVariation = new TypeVariationImpl("/test", required.VarChar(0).TypeName, "var2", string.Empty, FunctionBehavior.INHERITS);
+        var structFirstVariation = new TypeVariationImpl("/test", required.VarChar(1).TypeName, "var1", string.Empty, FunctionBehavior.INHERITS);
+        var structSecondVariation = new TypeVariationImpl("/test", required.VarChar(1).TypeName, "var2", string.Empty, FunctionBehavior.INHERITS);
         IType firstVarchar = required.VarChar(1);
         IType secondVarchar = required.VarChar(2);
         (IType Type, int ParameterGroup)[] structTypes =
